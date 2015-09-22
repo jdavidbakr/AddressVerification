@@ -3,11 +3,24 @@
 namespace jdavidbakr\AddressVerification;
 
 use GuzzleHttp\Client;
+use \Cache;
+use \Carbon\Carbon;
 
 class AddressVerificationService {
 	static public function Verify(AddressRequest $request)
 	{
-		return AddressVerificationService::Query($request);
+		// Cache?
+		if(config('address-verification.cache_time') > 0) {
+			$key = md5(json_encode($request));
+			return Cache::remember(
+				$key,
+				Carbon::now()->addDays(config('address-verification.cache_time')),
+				function() use($request) {
+					return AddressVerificationService::Query($request);
+				});
+		} else {
+			return AddressVerificationService::Query($request);
+		}
 	}
 
 	static private function Query(AddressRequest $request)
