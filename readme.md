@@ -47,4 +47,4 @@ The main properties you'll likely use in the response are:
 * State
 * ZipAddon
 
-View the [https://www.intelligentsearch.com/CorrectAddressWS/Documentation/CorrectAddress%20WebServices.pdf](IntelligentSearch documentation) for details about what all the returned fields are, as well as the request attributes.
+View the [IntelligentSearch documentation](https://www.intelligentsearch.com/CorrectAddressWS/Documentation/CorrectAddress%20WebServices.pdf) for details about what all the returned fields are, as well as the request attributes.
