@@ -53,6 +53,10 @@ The main properties you'll likely use in the response are:
 
 View the [IntelligentSearch documentation](https://www.intelligentsearch.com/CorrectAddressWS/Documentation/CorrectAddress%20WebServices.pdf) for details about what all the returned fields are, as well as the request attributes.
 
+[ico-version]: https://img.shields.io/packagist/v/jdavidbakr/address-verification.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/jdavidbakr/address-verification.svg?style=flat-square
+
 [link-packagist]: https://packagist.org/packages/jdavidbakr/address-verification
 [link-downloads]: https://packagist.org/packages/jdavidbakr/address-verification
 [link-author]: https://github.com/jdavidbakr
