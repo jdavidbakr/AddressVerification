@@ -1,6 +1,11 @@
 {
     "name": "jdavidbakr/address-verification",
     "description": "A service that performs address verification using the API at https://www.intelligentsearch.com/",
+    "license": "MIT",
+    "keywords": [
+        "Address Verification",
+        "intelligentsearch"
+    ],
     "require": {
         "guzzlehttp/guzzle": "~5.0"
     },

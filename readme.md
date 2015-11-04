@@ -1,6 +1,10 @@
 # AddressVerification
 
-## A Laravel Service that uses intelligentsearch.com to validate mailing addresses.
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Total Downloads][ico-downloads]][link-downloads]
+
+A Laravel Service that uses intelligentsearch.com to validate mailing addresses.
 
 This class sends an address to https://www.intelligentsearch.com/ via their API and updates the address with the most relevant result.  It is built to run within Laravel.
 
@@ -48,3 +52,8 @@ The main properties you'll likely use in the response are:
 * ZipAddon
 
 View the [IntelligentSearch documentation](https://www.intelligentsearch.com/CorrectAddressWS/Documentation/CorrectAddress%20WebServices.pdf) for details about what all the returned fields are, as well as the request attributes.
+
+[link-packagist]: https://packagist.org/packages/jdavidbakr/address-verification
+[link-downloads]: https://packagist.org/packages/jdavidbakr/address-verification
+[link-author]: https://github.com/jdavidbakr
+[link-contributors]: ../../contributors
