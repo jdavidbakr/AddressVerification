@@ -13,7 +13,7 @@ Note that in its current state it does not return multiple results.
 To install:
 
 ```
-composer install jdavidbakr/AddressVerification
+composer require jdavidbakr/address-verification
 ```
 
 Add to your config/app.php file 'providers' array:
