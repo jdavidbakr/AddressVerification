@@ -25,6 +25,10 @@ class AddressVerificationServiceProvider extends ServiceProvider {
 		$this->publishes([
 	        __DIR__.'/../config/address-verification.php' => config_path('address-verification.php')
 	    ], 'config');
+
+	    $this->app->singleton('address-verification', function($app) {
+	    	return new \jdavidbakr\AddressVerification\AddressVerificationService;
+	    });
 	}
 }
 

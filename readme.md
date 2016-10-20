@@ -22,6 +22,12 @@ Add to your config/app.php file 'providers' array:
 jdavidbakr\AddressVerification\AddressVerificationServiceProvider::class
 ```
 
+Optionally add the facade to your 'aliases' array:
+
+```
+'AddressVerification'=>jdavidbakr\AddressVerification\Facades\AddressVerificationFacade::class
+```
+
 Then publish the config file:
 
 ```
@@ -39,6 +45,10 @@ $request = new \jdavidbakr\AddressVerification\AddressRequest;
 $request->delivery_line_1 = '1600 Pennsylvania Ave NW';
 $request->city_state_zip = 'Washington DC 20500';
 $result = \jdavidbakr\AddressVerification\AddressVerificationService::Verify($request);
+
+// Alternatively use the facade:
+
+$result = \AddressVerification::Verify($request);
 ```
 
 The request defaults to ca_codes of McRy which returns mixed case and enables street address parsing for no-match addresses.
