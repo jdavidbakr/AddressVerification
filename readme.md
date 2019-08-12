@@ -30,11 +30,11 @@ The package is auto-discovered in Laravel.
 Add the following section to `config/services.php`:
 
 ```
-	'intelligentsearch'=>[
-		'username'=>env('INTELLIGENTSEARCH_USERNAME'),
-		'password'=>env('INTELLIGENTSEARCH_PASSWORD'),
+    'intelligentsearch'=>[
+        'username'=>env('INTELLIGENTSEARCH_USERNAME'),
+        'password'=>env('INTELLIGENTSEARCH_PASSWORD'),
         'cache_time'=>90, // in days.  Set to 0 to have no cache.
-	],
+    ],
 ```
 
 There will be a file now located at config/address-verification.php to set your intelligentsearch.com username and password.
