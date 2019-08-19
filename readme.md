@@ -76,6 +76,21 @@ The following exceptions can be thrown (all namespaced to the package):
 
 * `AddressVerificationCompleted` - this is an event that is fired every time an address verification is completed.  Use it to check the `SearchesLeft` attribute, if you want to send a notification that it's running low.  It receives in its payload the `AddressResponse`.
 
+```
+public function handle($event)
+{
+    $searchesLeft = $event->response->SearchesLeft;
+    if($searchesLeft < 1000) {
+        Bugsnag::notifyError('LowIntelligentSearchQueries', 'IntelligentSearch queries are low', function($report) use($searchesLeft) {
+            $report->setSeverity('warning');
+            $report->setMetaData([
+                'remaining'=>$searchesLeft
+            ]);
+        });
+    }
+}
+```
+
 View the [IntelligentSearch documentation](https://www.intelligentsearch.com/CorrectAddressWS/Documentation/CorrectAddress%20WebServices.pdf) for details about what all the returned fields are, as well as the request attributes.
 
 [ico-version]: https://img.shields.io/packagist/v/jdavidbakr/address-verification.svg?style=flat-square
