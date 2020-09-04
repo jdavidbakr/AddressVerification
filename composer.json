@@ -6,15 +6,14 @@
         "Address Verification",
         "intelligentsearch"
     ],
+    "minimum-stability": "dev",
     "require": {
-        "guzzlehttp/guzzle": "~5.3|~6.0.1|~6.1"
+        "guzzlehttp/guzzle": "~5.8|~6.0.1|~6.1"
     },
-    "authors": [
-        {
-            "name": "Jon Baker",
-            "email": "me@jdavidbaker.com"
-        }
-    ],
+    "authors": [{
+        "name": "Jon Baker",
+        "email": "me@jdavidbaker.com"
+    }],
     "autoload": {
         "psr-4": {
             "jdavidbakr\\AddressVerification\\": "src/"
@@ -32,7 +31,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.3",
-        "orchestra/testbench": "^3.8",
+        "orchestra/testbench": "3.*|4.x-dev|5.x-dev|6.x-dev",
         "spatie/array-to-xml": "^2.11"
     }
 }
