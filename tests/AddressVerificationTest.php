@@ -1,14 +1,15 @@
 <?php
 
 use GuzzleHttp\Client;
-use Orchestra\Testbench\TestCase;
-use Spatie\ArrayToXml\ArrayToXml;
 use Illuminate\Support\Facades\Event;
 use jdavidbakr\AddressVerification\AddressRequest;
 use jdavidbakr\AddressVerification\AddressResponse;
+use jdavidbakr\AddressVerification\AddressVerificationCompletedEvent;
 use jdavidbakr\AddressVerification\AddressVerificationService;
 use jdavidbakr\AddressVerification\VerificationFailedException;
-use jdavidbakr\AddressVerification\AddressVerificationCompletedEvent;
+use Orchestra\Testbench\TestCase;
+use Psr\Http\Message\ResponseInterface;
+use Spatie\ArrayToXml\ArrayToXml;
 
 class AddressVerificationTest extends TestCase
 {
@@ -53,7 +54,7 @@ class AddressVerificationTest extends TestCase
                         'batchname' => $request->batchname,
                     ]
                 ]
-            )->andReturn(Mockery::mock([
+            )->andReturn(Mockery::mock(ResponseInterface::class, [
                 'getBody' => ArrayToXML::convert(['WsCorrectAddress' => (array)$response])
             ]));
 
@@ -95,7 +96,7 @@ class AddressVerificationTest extends TestCase
                         'batchname' => $request->batchname,
                     ]
                 ]
-            )->andReturn(Mockery::mock([
+            )->andReturn(Mockery::mock(ResponseInterface::class, [
                 'getBody' => ArrayToXML::convert(['WsCorrectAddress' => (array)$response])
             ]));
 
